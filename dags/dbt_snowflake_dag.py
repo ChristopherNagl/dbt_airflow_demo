@@ -50,7 +50,7 @@ hello_task = DbtDag(
     dag_id="dbt_snowflake_dag",
     default_args=default_args,
     render_config=RenderConfig(
-        dbt_executable_path="/usr/local/airflow/dbt_venv/bin/dbt",
+        #dbt_executable_path="/usr/local/airflow/dbt_venv/bin/dbt",
         selector="only_mart",  # this selector must be defined in your dbt project
         load_method=LoadMode.DBT_LS,
     )
