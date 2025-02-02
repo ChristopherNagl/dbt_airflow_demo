@@ -33,7 +33,7 @@ default_args = {
 
 # Instantiate the DAG object
 dag = DAG(
-    dag_id="dbt_fabric_dag",
+    dag_id="dbt_snowflake_dag",
     default_args=default_args,
     schedule_interval="@daily",
     catchup=False
@@ -47,7 +47,7 @@ hello_task = DbtDag(
     schedule_interval="@daily",
     start_date=datetime(2023, 9, 10),
     catchup=False,
-    dag_id="dbt_fabric_dag",
+    dag_id="dbt_snowflake_dag",
     default_args=default_args,
     render_config=RenderConfig(
         selector="only_mart",  # this selector must be defined in your dbt project
