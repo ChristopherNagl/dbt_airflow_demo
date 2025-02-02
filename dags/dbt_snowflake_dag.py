@@ -31,24 +31,16 @@ default_args = {
     'retries': 1
 }
 
-# Instantiate the DAG object
-dag = DAG(
-    dag_id="dbt_snowflake_dag",
-    default_args=default_args,
-    schedule_interval="@daily",
-    catchup=False
-)
-
 # Define the DBT task
 hello_task = DbtDag(
     project_config=ProjectConfig(DBT_ROOT_PATH),
     operator_args={"install_deps": True},
     profile_config=profile_config,
-    schedule_interval="@daily",
     start_date=datetime(2023, 9, 10),
-    catchup=False,
     dag_id="dbt_snowflake_dag",
     default_args=default_args,
+    schedule_interval="@daily",
+    catchup=False,
     render_config=RenderConfig(
         #dbt_executable_path="/usr/local/airflow/dbt_venv/bin/dbt",
         selector="only_mart",  # this selector must be defined in your dbt project

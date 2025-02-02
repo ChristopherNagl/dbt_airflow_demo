@@ -1,6 +1,6 @@
 selectors:
   - name: only_mart
-    description: Selector for the controlling semantic model, which needs to be updated 4 times a day
+    description: Demo
     definition:
       union:
         - method: path
