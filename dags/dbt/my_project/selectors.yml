@@ -1,0 +1,8 @@
+selectors:
+  - name: only_mart
+    description: Selector for the controlling semantic model, which needs to be updated 4 times a day
+    definition:
+      union:
+        - method: path
+          value: "models/mart"
+          parents: true
