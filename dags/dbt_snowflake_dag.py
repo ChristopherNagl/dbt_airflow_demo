@@ -42,7 +42,6 @@ hello_task = DbtDag(
     schedule_interval="@daily",
     catchup=False,
     render_config=RenderConfig(
-        #dbt_executable_path="/usr/local/airflow/dbt_venv/bin/dbt",
         selector="only_mart",  # this selector must be defined in your dbt project
         load_method=LoadMode.DBT_LS,
     )
